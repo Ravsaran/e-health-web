@@ -37,7 +37,7 @@ export class LoginComponent implements OnInit, OnDestroy {
   login() {
     this.loginSubscription = this.authService.login(this.loginForm.value.username, this.loginForm.value.password).subscribe(
       (response: UserResponse) => {
-        if(response.role.toLowerCase().includes('patient'))
+        //if(response.role.toLowerCase().includes('patient'))
           this.router.navigate(['/dashboard']);
       }
     );

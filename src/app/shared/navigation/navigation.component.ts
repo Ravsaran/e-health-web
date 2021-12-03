@@ -59,7 +59,7 @@ export class NavigationComponent implements OnInit {
   if (this.user.role.toLowerCase().includes('patient'))
      this.paths = this.paths.filter((path) => path.role === 'patient');
   if (this.user.role.toLowerCase().includes('admin'))
-     this.paths = this.paths.filter((path) => path.role === 'admin');
+      this.paths = this.paths.filter((path) => path.role === 'admin');
   if (this.user.role.toLowerCase().includes('doctor'))
      this.paths = this.paths.filter((path) => path.role === 'doctor');
   } 

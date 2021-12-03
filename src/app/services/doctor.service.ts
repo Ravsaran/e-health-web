@@ -18,4 +18,8 @@ export class DoctorService {
   addDoctor(doctor) {
     return this.http.post('http://localhost:8080/doctor', doctor);
   }
+
+  fetchDoctor(id : number): any {
+    return this.http.get(`http://localhost:8080/doctorByUser/${id}`);
+  }
 }

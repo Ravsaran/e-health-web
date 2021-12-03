@@ -18,25 +18,33 @@
           <div class="card-body">
             <table class="table table-user-information table-hover table-borderless">
               <tbody>
-                <tr>
-                  <td class="title">User ID</td>
-                  <td class="userdata">{{ user?.userId }}</td>
-                </tr>
-                <tr>
-                  <td class="title">Username</td>
+                  <tr>
+                  <td class="userdata">Username:</td>
                   <td class="userdata">{{ user?.name }}</td>
                 </tr>
                 <tr></tr>
                 <tr>
-                  <td class="title">Gender</td>
+                  <td class="userdata">Gender:</td>
                   <td class="userdata">{{ user?.gender }}</td>
                 </tr>
                 <tr>
-                  <td class="title">Specialization</td>
+                  <td class="userdata">Specialization:</td>
                   <td class="userdata">{{ user?.specialization }}</td>
                 </tr>
                 <tr>
-                  <td class="title">Address</td>
+                  <td class="userdata">Role:</td>
+                  <td class="userdata">{{ user?.role }}</td>
+                </tr>
+                <tr>
+                  <td class="userdata">Email:</td>
+                  <td class="userdata">{{ user?.emailId }}</td>
+                </tr>
+                <tr>
+                  <td class="userdata">Mobile Number:</td>
+                  <td class="userdata">{{ user?.phoneNo }}</td>
+                </tr>
+                <tr>
+                  <td class="userdata">Address:</td>
                   <td class="userdata">{{ user?.address }}</td>
                 </tr>
               </tbody>
