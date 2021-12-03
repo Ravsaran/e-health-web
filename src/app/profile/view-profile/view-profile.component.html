@@ -1,0 +1,49 @@
+
+<div>
+  <div class="spinner-container">
+  </div>
+  <div class="d-flex flex-column" id="content-wrapper" >
+    <div id="content">
+      <div class="container-fluid">
+        <div class="card shadow">
+          <div class="card-header py-3">
+            <div class="panel-heading row">
+              <h2 class="col panel-title display-4" style="text-align: left">
+                <b> {{ user?.name }} </b>
+              </h2>
+              <hr />
+            </div>
+          </div>
+
+          <div class="card-body">
+            <table class="table table-user-information table-hover table-borderless">
+              <tbody>
+                <tr>
+                  <td class="title">User ID</td>
+                  <td class="userdata">{{ user?.userId }}</td>
+                </tr>
+                <tr>
+                  <td class="title">Username</td>
+                  <td class="userdata">{{ user?.name }}</td>
+                </tr>
+                <tr></tr>
+                <tr>
+                  <td class="title">Gender</td>
+                  <td class="userdata">{{ user?.gender }}</td>
+                </tr>
+                <tr>
+                  <td class="title">Specialization</td>
+                  <td class="userdata">{{ user?.specialization }}</td>
+                </tr>
+                <tr>
+                  <td class="title">Address</td>
+                  <td class="userdata">{{ user?.address }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,71 @@
+<div>
+  <div class="d-flex flex-column" id="content-wrapper">
+    <div id="content">
+      <div class="container-fluid">
+        <h2 class="text-dark mb-4">View Appointments</h2>
+        <div class="card shadow">
+          <div class="card-header py-3">
+            <p class="text-primary m-0 font-weight-bold">
+              Doctor Details
+              <button
+                class="btn btn-primary align-content-end float-right"
+                type="button"
+                (click)="navigate()"
+              >
+                Schedule Appointment
+              </button>
+            </p>
+          </div>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-6 text-nowrap">
+                <div
+                  id="dataTable_length"
+                  class="dataTables_length"
+                  aria-controls="dataTable"
+                ></div>
+              </div>
+              <div class="col-md-6">
+                <div
+                  class="text-md-right dataTables_filter"
+                  id="dataTable_filter"
+                ></div>
+              </div>
+            </div>
+            <div
+              class="table-responsive table mt-2"
+              id="dataTable"
+              role="grid"
+              aria-describedby="dataTable_info"
+            >
+              <table class="table my-0" id="dataTable">
+                <thead class="colour">
+                  <tr>
+                    <!-- <th scope="col">Id</th> -->
+                    <th scope="col"> Doctor Name</th>
+                    <th scope="col">Specialization</th>
+                    <th scope="col">Gender</th>
+                    <th scope="col">Mobile Number</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Address</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let doctor of doctors">
+                    <!-- <th scope="row">{{product.productId}}</th> -->
+                    <td>{{ doctor.doctor_name }}</td>
+                    <td>{{ doctor.specialization }}</td>
+                    <td>{{ doctor.gender }}</td>
+                    <td>{{ doctor.mobile_number }}</td>
+                    <td>{{ doctor.email_id }}</td>
+                    <td>{{ doctor.address }}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
