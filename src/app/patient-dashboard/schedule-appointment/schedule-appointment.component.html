@@ -9,14 +9,14 @@
           </div>
 
           <div class="card-body">
-            <form (ngSubmit)="placeOrder()">
+            <form (ngSubmit)="createAppointment()">
               <div class="form-row">
                 <div class="col">
                   <div class="form-group">
-                    <label for="firstName"><strong>First Name</strong><br /></label>
+                    <label for="patientId"><strong>Patient Id</strong><br /></label>
                     <input
-                      name="firstName1"
-                      placeholder="Enter the firstName" 
+                      name="patientId"
+                      placeholder="Enter the patient id" 
                       class="form-control"
                       ngModel
                       required
@@ -25,12 +25,12 @@
                 </div>
                 <div class="col">
                   <div class="form-group">
-                    <label for="lastName"
-                      ><strong>Last Name</strong><br
+                    <label for="doctorId"
+                      ><strong>Doctor Id</strong><br
                     /></label>
                     <input
-                      name="lastName1"
-                      placeholder="LastName"
+                      name="doctorId"
+                      placeholder="enter the doctor id"
                       class="form-control"
                       ngModel
                       required
@@ -41,8 +41,8 @@
               <div class="form-row">
                 <div class="col">
                   <div class="form-group">
-                    <label for="gender"
-                      ><strong>Gender</strong><br
+                    <label for="Appointment"
+                      ><strong>Appointment</strong><br
                     /></label>
                     <input
                       name="gender1"
@@ -53,37 +53,28 @@
                     />
                   </div>
                 </div>
-                <div class="col">
-                  <div class="form-group">
-                    <label for="email"
-                      ><strong>Email</strong><br
-                    /></label>
-                    <input
-                      name="email1"
-                      placeholder="Email"
-                      class="form-control"
-                      ngModel
-                      required
-                    />
-                  </div>
-                </div>
+               
               </div>
               <div class="form-row">
-                <div class="col">
-                  <div class="form-group">
-                    <label for="address"
-                      ><strong>Address</strong><br
-                    /></label>
-                    <input
-                      name="address1"
-                      placeholder="Address"
-                      class="form-control"
-                      ngModel
-                      required
-                    />
-                  </div>
-                </div>
+                
+                  <mat-form-field>
+                    <input matInput [ngxMatDatetimePicker]="picker" placeholder="Choose a date" [formControl]="dateControl"
+                      [min]="minDate" [max]="maxDate" [disabled]="disabled">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <ngx-mat-datetime-picker #picker [showSpinners]="showSpinners" [showSeconds]="showSeconds"
+                      [stepHour]="stepHour" [stepMinute]="stepMinute" [stepSecond]="stepSecond" [touchUi]="touchUi"
+                      [color]="color" [enableMeridian]="enableMeridian">
+                    </ngx-mat-datetime-picker>
+                  </mat-form-field>
+                </td>
+                <td>
+                  <ngx-mat-timepicker [(ngModel)]="date" [disabled]="disabled" [showSpinners]="showSpinners"
+                    [stepHour]="stepHour" [stepMinute]="stepMinute" [stepSecond]="stepSecond" [showSeconds]="showSeconds"
+                    [color]="color" [enableMeridian]="enableMeridian">
+                  </ngx-mat-timepicker>
+                </td>
               </div>
+            
               <button
                 class="btn btn-primary"
                 type="submit"

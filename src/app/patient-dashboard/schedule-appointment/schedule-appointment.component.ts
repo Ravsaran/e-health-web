@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Patient } from 'src/app/models/patient.model';
+import { Appointment } from 'src/app/models/appointment.model.';
 import { User } from 'src/app/models/user.model';
-import { PatientDetailService } from 'src/app/services/patient-detail.service';
+import { AppointmentDetailService } from 'src/app/services/appointment-detail.service';
 
 @Component({
   selector: 'app-appointment',
@@ -10,22 +10,18 @@ import { PatientDetailService } from 'src/app/services/patient-detail.service';
   styleUrls: ['./schedule-appointment.component.css'],
 })
 export class ScheduleAppointmentComponent implements OnInit {
-  patient;
-  firstName: string;
-  lastName: string;
-  gender: string;
-  email: string;
-  address: string;
-  mobileNumber: string;
-  user : User;
+  appointment;
+  patientId: string;
+  doctorId: string;
+  appointmentDate: string;
 
   constructor(
-    private patientDetailService: PatientDetailService,
+    private appointmentDetailService: AppointmentDetailService,
     //private productService: ProductService,
     private router: Router,
    // private distributorService: DistributorService
   ) {
-    this.patient = new Patient();
+    this.appointment = new Appointment();
   }
 
   ngOnInit() {
@@ -40,26 +36,17 @@ export class ScheduleAppointmentComponent implements OnInit {
     // });
   }
 
-  placeOrder() {
-    this.patient.firstName = this.firstName;
-    this.patient.lastName= this.lastName;
-    this.patient.gender= this.gender;
-    this.patient.email = this.email;
-    this.patient.address = this.address;
-    this.patient.mobileNumber = this.mobileNumber;
-    
-    let userdata = new User();
-    userdata.role = "patient";
-    userdata.email = this.email;
-    userdata.password = "patient";
+  createAppointment() {
+    this.appointment.doctorId = this.doctorId;
+    this.appointment.patientId = this.patientId;
+    this.appointment.appointmentDate= this.appointmentDate;
 
-    this.patientDetailService.createUser(userdata)
+
+    this.appointmentDetailService.createAppointment(this.appointment)
       .subscribe((x: any) => {
         //this.userdata.role = "patient";
-        this.patient.user = x;
-        this.patientDetailService.createPatients(this.patient).subscribe((x) => {
-        this.router.navigate(['/dashboard/appointments']);
-      });
+       let k =x;
+       console.log(k);
       });
     
   }
