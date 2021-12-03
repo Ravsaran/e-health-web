@@ -1,6 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { AdminDetails } from 'src/app/models/admin-details.model';
+import { DoctorDetails } from 'src/app/models/doctor-details.model';
+import { PatientDetail } from 'src/app/models/patient-detail.model copy';
+import { Patient } from 'src/app/models/patient.model';
 import { UserDetails } from 'src/app/models/user-details.model';
 import { UserResponse } from 'src/app/models/user-response.model';
+import { AdminService } from 'src/app/services/admin.service';
 import { AuthService } from 'src/app/services/auth.service';
 import { DoctorService } from 'src/app/services/doctor.service';
 import { ManageUserService } from 'src/app/services/manage-user.service';
@@ -13,27 +18,80 @@ import { PatientDetailService } from 'src/app/services/patient-detail.service';
 })
 export class ViewProfileComponent implements OnInit {
   user: UserDetails;
-  userResponse: UserResponse;
+  userResponse;
 
   constructor(
     private patientService: PatientDetailService,
     private doctorService: DoctorService,
-    private authService: AuthService
+    private authService: AuthService,
+    private adminService: AdminService
   ) {
     this.fetchUser();
+    this.userResponse = new UserResponse();
+    this.user = new UserDetails();
   }
 
   fetchUser() {
     this.userResponse = this.authService.fetchFromSessionStorage();
-    if(this.user.role.toLowerCase().includes('patient')){
-
+    if(this.userResponse?.role.toLowerCase().includes('patient')){
+      this.patientService.fetchPatient(this.userResponse.id).subscribe((response: PatientDetail) => {
+        this.createUser(response.user?.id,
+          response.firstName +" " + response.lastName,
+          'Patient',
+          'Patient',
+          response.gender,
+          response.email,
+          response.mobileNumber,
+          response.address,
+          response.user)
+      });
+      
     }
-    if(this.user.role.toLowerCase().includes('doctor')){
-
+    if(this.userResponse?.role.toLowerCase().includes('doctor')){
+      this.doctorService.fetchDoctor(this.userResponse.id).subscribe((response: DoctorDetails) => {
+        this.createUser(response.user?.id,
+          response.doctor_name,
+          'Doctor',
+          response.specialization,
+          response.gender,
+          response.email_id,
+          response.mobile_number,
+          response.address,
+          response.user)
+      });
     }
-    if(this.user.role.toLowerCase().includes('admin')){
-
+    if(this.userResponse?.role.toLowerCase().includes('admin')){
+      this.adminService.fetchAdmin(this.userResponse.id).subscribe((response: AdminDetails) => {
+        this.createUser(response.user?.id,
+          response.admin_name,
+          'Admin',
+          'Admin',
+          response.gender,
+          response.email_id,
+          response.mobile_number,
+          response.address,
+          response.user)
+      });
     }
+  }
+
+  createUser(userId: number,
+    name: string,
+    role: string,
+    specialization: string,
+    gender: string,
+    emailId: string,
+    phoneNo: string,
+    address: string,
+    user: UserResponse): void{
+    this.user.name = name;
+    this.user.role = role;
+    this.user.specialization = specialization;
+    this.user.gender = gender;
+    this.user.emailId = emailId;
+    this.user.phoneNo = phoneNo;
+    this.user.address = address;
+    this.user.user = user;
   }
 
   ngOnInit(): void {}
