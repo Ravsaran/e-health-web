@@ -31,15 +31,7 @@ export class ScheduleAppointmentComponent implements OnInit {
   }
 
   ngOnInit() {
-    // this.distributorService
-    //   .fetchAllDistributors()
-    //   .subscribe((response: Distributor[]) => {
-    //     this.distributor = response;
-    //     console.log(this.distributor);
-    //   });
-    // this.productService.fetchAllProducts().subscribe((response: Product[]) => {
-    //   this.products = response;
-    // });
+    
   }
 
   ngAfterViewInit(){

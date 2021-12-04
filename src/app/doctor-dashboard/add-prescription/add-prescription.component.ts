@@ -87,10 +87,6 @@ export class AddPrescriptionComponent implements OnInit {
    this.prescription.patientId = this.patientId;
     this.prescription.doctorId= this.doctorId;
     this.prescription.medicalCondition= this.medicalCondition;
-    //this.prescription.email_id = this.email_id;
-  
-    
-   
 
     this.prescriptionService.createPrescription(this.prescription)
       .subscribe((x: Prescription) => {
@@ -124,12 +120,8 @@ export class AddPrescriptionComponent implements OnInit {
         .subscribe(x =>{
           console.log("succesfully created the prescription");
         });
-        /*this.doctor.user = x;
-        this.doctorService.addDoctor(this.doctor).subscribe((x) => {
-       // this.router.navigate(['/dashboard/doctors']);*/
+        
       });
-      //});
-    //*/
   }
   }
 

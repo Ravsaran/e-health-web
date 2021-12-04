@@ -1,7 +1,6 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Appointment } from 'src/app/models/appointment.model';
-import { User } from 'src/app/models/user.model';
 import { AppointmentDetailService } from 'src/app/services/appointment-detail.service';
 import { DatePipe } from '@angular/common';
 @Component({
@@ -31,15 +30,7 @@ export class ScheduleAppointmentComponent implements OnInit {
   }
 
   ngOnInit() {
-    // this.distributorService
-    //   .fetchAllDistributors()
-    //   .subscribe((response: Distributor[]) => {
-    //     this.distributor = response;
-    //     console.log(this.distributor);
-    //   });
-    // this.productService.fetchAllProducts().subscribe((response: Product[]) => {
-    //   this.products = response;
-    // });
+   
   }
 
   ngAfterViewInit(){

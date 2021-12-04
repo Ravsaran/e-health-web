@@ -3,7 +3,6 @@ import { Router } from '@angular/router';
 import { DoctorDetails } from 'src/app/models/doctor-details.model';
 import { UserResponse } from 'src/app/models/user-response.model';
 import { User } from 'src/app/models/user.model';
-import { Warehouse } from 'src/app/models/warehouse.model';
 import { DoctorService } from 'src/app/services/doctor.service';
 
 @Component({

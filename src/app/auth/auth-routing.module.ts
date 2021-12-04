@@ -1,10 +1,3 @@
-/**
- * @author Gagandeep Singh
- * @email singh.gagandeep3911@gmail.com
- * @create date 2020-11-03 22:11:13
- * @modify date 2020-11-03 22:11:13
- * @desc Auth routing module
- */
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AuthComponent } from './auth.component';

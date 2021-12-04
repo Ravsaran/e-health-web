@@ -1,5 +1,4 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
@@ -16,8 +15,7 @@ export class ViewPatientsComponent implements OnInit {
   dataSource = new MatTableDataSource<Patient>();
   @ViewChild(MatSort, { static: false }) sort: MatSort;
   @ViewChild(MatPaginator) paginator: MatPaginator;
-  // Specify columns tht should be rendered, must match names of matColumnDef
-  // ID is not beign displayed as its not present here 
+
   displayedColumns: string[] = [
     'firstName',
     'lastName',
@@ -27,11 +25,8 @@ export class ViewPatientsComponent implements OnInit {
     'mobileNumber',
   ];
   userSubscription: Subscription;
-
   constructor(
-    private patientDetailService: PatientDetailService,
-    private dialogRef: MatDialog
-  ) {}
+    private patientDetailService: PatientDetailService  ) {}
 
   ngOnInit(): void {
     this.fetchAllPatients();

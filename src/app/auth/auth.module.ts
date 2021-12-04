@@ -1,10 +1,3 @@
-/**
- * @author Gagandeep Singh
- * @email singh.gagandeep3911@gmail.com
- * @create date 2020-11-03 22:15:06
- * @modify date 2020-11-03 22:15:06
- * @desc Auth related functions
- */
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LoginComponent } from './login/login.component';

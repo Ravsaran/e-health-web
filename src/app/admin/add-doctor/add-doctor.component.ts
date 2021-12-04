@@ -44,8 +44,6 @@ export class AddDoctorComponent implements OnInit {
     userdata.email = this.email_id;
     userdata.password = "doctor";
 
-    
-
     this.doctorService.createUser(userdata)
       .subscribe((x: any) => {
         this.doctor.user = x;

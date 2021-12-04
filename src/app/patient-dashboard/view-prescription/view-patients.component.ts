@@ -16,8 +16,7 @@ export class ViewPatientsComponent implements OnInit {
   dataSource = new MatTableDataSource<Patient>();
   @ViewChild(MatSort, { static: false }) sort: MatSort;
   @ViewChild(MatPaginator) paginator: MatPaginator;
-  // Specify columns tht should be rendered, must match names of matColumnDef
-  // ID is not beign displayed as its not present here 
+  
   displayedColumns: string[] = [
     'firstName',
     'lastName',

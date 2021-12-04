@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "inventory-frontend": {
+    "health-frontend": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/inventory-frontend",
+            "outputPath": "dist/health-frontend",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -79,18 +79,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "inventory-frontend:build"
+            "browserTarget": "health-frontend:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "inventory-frontend:build:production"
+              "browserTarget": "health-frontend:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "inventory-frontend:build"
+            "browserTarget": "health-frontend:build"
           }
         },
         "test": {
@@ -134,16 +134,16 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "inventory-frontend:serve"
+            "devServerTarget": "health-frontend:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "inventory-frontend:serve:production"
+              "devServerTarget": "health-frontend:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "inventory-frontend"
+  "defaultProject": "health-frontend"
 }

@@ -1,10 +1,3 @@
-/**
- * @author Gagandeep Singh
- * @email singh.gagandeep3911@gmail.com
- * @create date 2020-11-04 09:28:33
- * @modify date 2020-11-04 09:28:33
- * @desc Root App module
- */
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';

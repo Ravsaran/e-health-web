@@ -6,7 +6,6 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root',
 })
 export class NotificationService {
-  serviceUrl = `${environment.protocol}${environment.applicationUrl}/${environment.productOrderService}`;
   constructor(private http: HttpClient) {}
 
   fetchAllNotifications(prescriptionId) {

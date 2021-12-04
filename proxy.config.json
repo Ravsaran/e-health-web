@@ -1,6 +1,6 @@
 {
   "*": {
-  "target": "https://192.168.0.194:9000",
+  "target": "https://localhost:4200",
   "secure": false,
   "logLevel": "debug",
   "changeOrigin": true

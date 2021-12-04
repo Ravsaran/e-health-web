@@ -12,7 +12,6 @@ import { DashboardRoutingModule } from './dashboard-routing.module';
 import { DashboardComponent } from './dashboard.component';
 import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
 import { ScheduleAppointmentComponent } from '../patient-dashboard/schedule-appointment/schedule-appointment.component';
-//import { NgxMatDatetimePickerModule, NgxMatTimepickerModule,NgxMatNativeDateModule } from 'ngx-mat-datetime-picker';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core';
 import { BrowserModule } from '@angular/platform-browser'
@@ -46,11 +45,8 @@ import { AddDiagnosticComponent } from '../doctor-dashboard/add-diagnostics/add-
     SharedModule,
     NgxMaterialTimepickerModule,
     MatNativeDateModule,
-   // NgxMatDatetimePickerModule,
     MatDatepickerModule,
     BrowserModule
-    //NgxMatTimepickerModule,
-    //NgxMatNativeDateModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })

@@ -1,8 +1,6 @@
 {
-  "name": "inventory-frontend",
+  "name": "e-health-web",
   "version": "0.0.0",
-  "author": "Gagandeep Singh",
-  "homepage": "https://gagandeep39.github.io/inventory-frontend/",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",

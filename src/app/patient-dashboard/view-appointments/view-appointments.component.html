@@ -40,7 +40,6 @@
               <table class="table my-0" id="dataTable">
                 <thead class="colour">
                   <tr>
-                    <!-- <th scope="col">Id</th> -->
                     <th scope="col">Patient Id</th>
                     <th scope="col">Doctor Id</th>
                     <th scope="col">Appointment Data</th>
@@ -49,7 +48,6 @@
                 </thead>
                 <tbody>
                   <tr *ngFor = "let apt of appointment">
-                    <!-- <th scope="row">{{product.productId}}</th> -->
                     <td>{{ apt.patientId }}</td>
                     <td>{{ apt.doctorId }}</td>
                     <td>{{ apt.appointmentDate }}</td>

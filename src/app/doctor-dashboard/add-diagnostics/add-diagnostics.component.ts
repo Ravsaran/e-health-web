@@ -34,15 +34,10 @@ export class AddDiagnosticComponent implements OnInit {
 
   saveDiagnosticReport() {
    
-    
-
-   
     let diagnosticDetails = new Diagnsotic();
     diagnosticDetails.patientId = this.patientId;
     diagnosticDetails.doctorId =this.doctorId;
     diagnosticDetails.testName =this.testName;
-
-    
 
     this.diagnosticDetailService.createDiagnostics(diagnosticDetails)
       .subscribe((x: any) => {

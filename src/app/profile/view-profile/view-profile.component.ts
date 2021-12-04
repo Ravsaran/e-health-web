@@ -2,13 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { AdminDetails } from 'src/app/models/admin-details.model';
 import { DoctorDetails } from 'src/app/models/doctor-details.model';
 import { PatientDetail } from 'src/app/models/patient-detail.model copy';
-import { Patient } from 'src/app/models/patient.model';
 import { UserDetails } from 'src/app/models/user-details.model';
 import { UserResponse } from 'src/app/models/user-response.model';
 import { AdminService } from 'src/app/services/admin.service';
 import { AuthService } from 'src/app/services/auth.service';
 import { DoctorService } from 'src/app/services/doctor.service';
-import { ManageUserService } from 'src/app/services/manage-user.service';
 import { PatientDetailService } from 'src/app/services/patient-detail.service';
 
 @Component({
