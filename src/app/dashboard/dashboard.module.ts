@@ -10,7 +10,13 @@ import { ViewProfileComponent } from '../profile/view-profile/view-profile.compo
 import { SharedModule } from '../shared/shared.module';
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { DashboardComponent } from './dashboard.component';
-
+import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
+import { ScheduleAppointmentComponent } from '../patient-dashboard/schedule-appointment/schedule-appointment.component';
+//import { NgxMatDatetimePickerModule, NgxMatTimepickerModule,NgxMatNativeDateModule } from 'ngx-mat-datetime-picker';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import {MatNativeDateModule} from '@angular/material/core';
+import { BrowserModule } from '@angular/platform-browser'
+import { ViewAppointmentsComponent } from '../patient-dashboard/view-appointments/view-appointments.component';
 @NgModule({
   declarations: [
     ViewDoctorsComponent,
@@ -19,6 +25,9 @@ import { DashboardComponent } from './dashboard.component';
     ViewPatientsComponent,
     ViewProfileComponent,
     DashboardComponent,
+    ScheduleAppointmentComponent,
+    ViewAppointmentsComponent
+
   ],
   imports: [
     CommonModule,
@@ -27,6 +36,13 @@ import { DashboardComponent } from './dashboard.component';
     HttpClientModule,
     DashboardRoutingModule,
     SharedModule,
+    NgxMaterialTimepickerModule,
+    MatNativeDateModule,
+   // NgxMatDatetimePickerModule,
+    MatDatepickerModule,
+    BrowserModule
+    //NgxMatTimepickerModule,
+    //NgxMatNativeDateModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })

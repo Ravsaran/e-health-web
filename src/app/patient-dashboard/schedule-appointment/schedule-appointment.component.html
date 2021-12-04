@@ -9,13 +9,14 @@
           </div>
 
           <div class="card-body">
-            <form (ngSubmit)="createAppointment()">
+            <form (ngSubmit)="createAppointment()" #addForm="ngForm"  class="needs-validation">
               <div class="form-row">
                 <div class="col">
                   <div class="form-group">
                     <label for="patientId"><strong>Patient Id</strong><br /></label>
                     <input
-                      name="patientId"
+                    [(ngModel)]="patientId"
+                      name="patientId1"
                       placeholder="Enter the patient id" 
                       class="form-control"
                       ngModel
@@ -29,7 +30,8 @@
                       ><strong>Doctor Id</strong><br
                     /></label>
                     <input
-                      name="doctorId"
+                    [(ngModel)]="doctorId"
+                      name="doctorId1"
                       placeholder="enter the doctor id"
                       class="form-control"
                       ngModel
@@ -41,45 +43,48 @@
               <div class="form-row">
                 <div class="col">
                   <div class="form-group">
-                    <label for="Appointment"
-                      ><strong>Appointment</strong><br
+                    <label for="Appointment Date"
+                      ><strong> Appointment Date</strong><br
                     /></label>
-                    <input
-                      name="gender1"
-                      placeholder="Gender"
-                      class="form-control"
-                      ngModel
-                      required
-                    />
+                  
                   </div>
+                  <div>
+                    <mat-form-field appearance="fill">
+                      <mat-label>Choose a date</mat-label>
+                      <input matInput 
+                      name="appointmentDate1"
+                      class="form-control" 
+                      [matDatepicker]="picker1" 
+                      [(ngModel)] = "appointmentDate" 
+                      required>
+                      <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                      <mat-datepicker #picker1></mat-datepicker>
+                    </mat-form-field>
+                  
+                 </div>
                 </div>
-               
-              </div>
-              <div class="form-row">
+                </div>
                 
-                  <mat-form-field>
-                    <input matInput [ngxMatDatetimePicker]="picker" placeholder="Choose a date" [formControl]="dateControl"
-                      [min]="minDate" [max]="maxDate" [disabled]="disabled">
-                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                    <ngx-mat-datetime-picker #picker [showSpinners]="showSpinners" [showSeconds]="showSeconds"
-                      [stepHour]="stepHour" [stepMinute]="stepMinute" [stepSecond]="stepSecond" [touchUi]="touchUi"
-                      [color]="color" [enableMeridian]="enableMeridian">
-                    </ngx-mat-datetime-picker>
-                  </mat-form-field>
-                </td>
-                <td>
-                  <ngx-mat-timepicker [(ngModel)]="date" [disabled]="disabled" [showSpinners]="showSpinners"
-                    [stepHour]="stepHour" [stepMinute]="stepMinute" [stepSecond]="stepSecond" [showSeconds]="showSeconds"
-                    [color]="color" [enableMeridian]="enableMeridian">
-                  </ngx-mat-timepicker>
-                </td>
-              </div>
-            
+                <div class="form-group">
+                  <label for="AppointmentTime"
+                    ><strong>Appointment time</strong><br
+                  /></label>
+                  <input
+                    name="appointmentTime"
+                    placeholder="Appointment time"
+                    class="form-control"
+                    [ngxTimepicker] = "picker"
+                    [(ngModel)] ="appointmentTime"
+                    required
+                  />
+                  <ngx-material-timepicker #picker></ngx-material-timepicker>
+                </div>
+             
               <button
                 class="btn btn-primary"
                 type="submit"
               >
-                Add Patient
+                Schedule Appointment
               </button>
             </form>
           </div>

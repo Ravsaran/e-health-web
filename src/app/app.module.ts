@@ -16,6 +16,7 @@ import { AuthModule } from './auth/auth.module';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { httpInterceptors } from './interceptors';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     DashboardModule,
     AuthModule,
     BrowserAnimationsModule,
+    NgxMaterialTimepickerModule
   ],
   providers: [
     httpInterceptors,

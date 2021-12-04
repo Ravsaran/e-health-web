@@ -6,7 +6,7 @@
         <div class="card shadow">
           <div class="card-header py-3">
             <p class="text-primary m-0 font-weight-bold">
-              Doctor Details
+              Appointments
               <button
                 class="btn btn-primary align-content-end float-right"
                 type="button"
@@ -42,23 +42,19 @@
                 <thead class="colour">
                   <tr>
                     <!-- <th scope="col">Id</th> -->
-                    <th scope="col"> Doctor Name</th>
-                    <th scope="col">Specialization</th>
-                    <th scope="col">Gender</th>
-                    <th scope="col">Mobile Number</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">Address</th>
+                    <th scope="col">Patient Id</th>
+                    <th scope="col">Doctor Id</th>
+                    <th scope="col">Appointment Data</th>
+                    <th scope="col">Appointment Time</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr *ngFor="let doctor of doctors">
+                  <tr *ngFor = "let apt of appointment">
                     <!-- <th scope="row">{{product.productId}}</th> -->
-                    <td>{{ doctor.doctor_name }}</td>
-                    <td>{{ doctor.specialization }}</td>
-                    <td>{{ doctor.gender }}</td>
-                    <td>{{ doctor.mobile_number }}</td>
-                    <td>{{ doctor.email_id }}</td>
-                    <td>{{ doctor.address }}</td>
+                    <td>{{ apt.patientId }}</td>
+                    <td>{{ apt.doctorId }}</td>
+                    <td>{{ apt.appointmentDate }}</td>
+                    <td>{{ apt.appointmentTime }}</td>
                   </tr>
                 </tbody>
               </table>

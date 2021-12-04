@@ -12,7 +12,9 @@ import { MatCardModule } from '@angular/material/card';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatSelectModule } from '@angular/material/select';
 import { MatIconModule } from '@angular/material/icon';
-import {MatBadgeModule} from '@angular/material/badge'
+import {MatBadgeModule} from '@angular/material/badge';
+import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
+import { BrowserModule } from '@angular/platform-browser';
 
 @NgModule({
   declarations: [],
@@ -29,7 +31,9 @@ import {MatBadgeModule} from '@angular/material/badge'
     MatInputModule,
     MatSelectModule,
     MatIconModule,
-    MatBadgeModule
+    MatBadgeModule,
+    NgxMaterialTimepickerModule,
+    BrowserModule
   ],
   exports: [
     MatDialogModule,
@@ -43,7 +47,8 @@ import {MatBadgeModule} from '@angular/material/badge'
     MatInputModule,
     MatSelectModule,
     MatIconModule,
-    MatBadgeModule
+    MatBadgeModule,
+    BrowserModule
   ],
 })
 export class MaterialCustomModule {}

@@ -1,21 +1,27 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { Appointment } from 'src/app/models/appointment.model.';
 import { User } from 'src/app/models/user.model';
 import { AppointmentDetailService } from 'src/app/services/appointment-detail.service';
-
+import { DatePipe } from '@angular/common';
 @Component({
   selector: 'app-appointment',
   templateUrl: './schedule-appointment.component.html',
   styleUrls: ['./schedule-appointment.component.css'],
+  providers: [DatePipe]
+
 })
 export class ScheduleAppointmentComponent implements OnInit {
+ // @ViewChild('picker') picker:ElementRef;
+  //@ViewChild('picker1') picker1:ElementRef;
   appointment;
+ // matDatepicker;
   patientId: string;
   doctorId: string;
-  appointmentDate: string;
+  appointmentDate: any;
+  appointmentTime: string;
 
-  constructor(
+  constructor(public datepipe: DatePipe,
     private appointmentDetailService: AppointmentDetailService,
     //private productService: ProductService,
     private router: Router,
@@ -36,10 +42,21 @@ export class ScheduleAppointmentComponent implements OnInit {
     // });
   }
 
+  ngAfterViewInit(){
+   // this.date = this.picker.nativeElement;
+    //this.time = this.picker1.nativeElement;
+  }
   createAppointment() {
+   // console.log(this.matDatepicker);
+    //this.date = this.picker.nativeElement;
+    //this.time = this.picker1.nativeElement;
+   console.log(this.appointmentDate);
+   console.log(this.appointmentTime);
+   console.log(this.datepipe.transform(this.appointmentDate, 'yyyy-MM-dd'));
     this.appointment.doctorId = this.doctorId;
     this.appointment.patientId = this.patientId;
-    this.appointment.appointmentDate= this.appointmentDate;
+    this.appointment.appointmentDate= this.datepipe.transform(this.appointmentDate, 'yyyy-MM-dd');
+    this.appointment.appointmentTime= this.appointmentTime;
 
 
     this.appointmentDetailService.createAppointment(this.appointment)
