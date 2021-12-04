@@ -6,7 +6,7 @@ import { MaterialCustomModule } from '../material-custom/material-custom.module'
 import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
-    NavigationComponent,
+    NavigationComponent
   ],
   imports: [
     ReactiveFormsModule,

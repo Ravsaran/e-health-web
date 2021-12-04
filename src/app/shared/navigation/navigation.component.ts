@@ -48,6 +48,19 @@ export class NavigationComponent implements OnInit {
       label: 'Prescription',
       role: 'patient',
     }
+    ,
+    {
+      route: '/dashboard/prescription',
+      class: 'fas fa-people-carry',
+      label: 'Prescription',
+      role: 'doctor',
+    },
+    {
+      route: '/dashboard/notifications',
+      class: 'fas fa-people-carry',
+      label: 'Notification',
+      role: 'patient',
+    }
   ];
 
   constructor(private authService: AuthService, private router: Router) {}

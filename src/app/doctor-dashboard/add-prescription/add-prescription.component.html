@@ -1,0 +1,240 @@
+<div>
+  <div class="d-flex flex-column" id="content-wrapper">
+    <div id="content">
+      <div class="container-fluid">
+        <h3 class="text-dark mb-4">Add Prescription</h3>
+        <div class="card shadow">
+          <div class="card-header py-3">
+            <p class="text-primary m-0 font-weight-bold">Prescription form</p>
+          </div>
+          <div class="card-body">
+            <form
+              (ngSubmit)="savePrescription()"
+              #addForm="ngForm"
+              class="needs-validation"
+            >
+
+            <div class="form-row">
+              <div class="col">
+                <div class="form-group">
+                  <label for="patientId"><strong>Patient Id</strong><br /></label>
+                  <input
+                  [(ngModel)]="patientId"
+                    name="patientId1"
+                    placeholder="Enter the patient id" 
+                    class="form-control"
+                    ngModel
+                    required
+                  />
+                </div>
+              </div>
+              </div>
+              <div class="form-row">
+                <div class="col">
+                  <div class="form-group">
+                    <label for="doctorId"><strong>Doctor Id</strong><br /></label>
+                    <input
+                    [(ngModel)]="doctorId"
+                      name="doctorId"
+                      placeholder="Enter the doctor id" 
+                      class="form-control"
+                      ngModel
+                      required
+                    />
+                  </div>
+                </div>
+                </div>
+                <div class="form-row">
+                  <div class="col">
+                    <div class="form-group">
+                      <label for="medicalCondition"><strong>Medical Condition</strong><br /></label>
+                      <input
+                      [(ngModel)]="medicalCondition"
+                        name="medicalCondition"
+                        placeholder="Enter the medical condition" 
+                        class="form-control"
+                        ngModel
+                        required
+                      />
+                    </div>
+                  </div>
+                  </div>
+                <label ><strong>Recommendation</strong><br /></label>
+            <div class="form-row">
+              <div class="col">
+                <div class="form-group">
+                  <mat-form-field appearance="fill">
+                    <mat-label>suggested medicine</mat-label>
+                    <mat-select>
+                      <mat-option *ngFor="let medicine of medicines" [value]="medicine.value">
+                        {{medicine.viewValue}}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-group">
+                  <mat-form-field appearance="fill">
+                    <mat-label>Timing1</mat-label>
+                    <mat-select>
+                      <mat-option *ngFor="let timing of timings" [value]="timing.value">
+                        {{timing.viewValue}}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-group">
+                  <mat-form-field appearance="fill">
+                    <mat-label>Timing2</mat-label>
+                    <mat-select>
+                      <mat-option *ngFor="let timing of timings" [value]="timing.value">
+                        {{timing.viewValue}}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-group">
+                  <mat-form-field appearance="fill">
+                    <mat-label>Timing3</mat-label>
+                    <mat-select>
+                      <mat-option *ngFor="let timing of timings" [value]="timing.value">
+                        {{timing.viewValue}}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+              </div>
+              </div>
+              <div class="form-row">
+              <div class="col">
+                <div class="form-group">
+                  <mat-form-field appearance="fill">
+                    <mat-label>suggested food</mat-label>
+                    <mat-select>
+                      <mat-option *ngFor="let food of foods" [value]="food.value">
+                        {{food.viewValue}}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                  
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-group">
+                  <mat-form-field appearance="fill">
+                    <mat-label>Timing1</mat-label>
+                    <mat-select>
+                      <mat-option *ngFor="let timing of timings" [value]="timing.value">
+                        {{timing.viewValue}}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-group">
+                  <mat-form-field appearance="fill">
+                    <mat-label>Timing2</mat-label>
+                    <mat-select>
+                      <mat-option *ngFor="let timing of timings" [value]="timing.value">
+                        {{timing.viewValue}}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-group">
+                  <mat-form-field appearance="fill">
+                    <mat-label>Timing3</mat-label>
+                    <mat-select>
+                      <mat-option *ngFor="let timing of timings" [value]="timing.value">
+                        {{timing.viewValue}}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="col">
+                <div class="form-group">
+                  <mat-form-field appearance="fill">
+                    <mat-label>suggested excercises</mat-label>
+                    <mat-select>
+                      <mat-option *ngFor="let exercise of exercises" [value]="exercise.value">
+                        {{exercise.viewValue}}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-group">
+                  <mat-form-field appearance="fill">
+                    <mat-label>Timing1</mat-label>
+                    <mat-select>
+                      <mat-option *ngFor="let timing of timings" [value]="timing.value">
+                        {{timing.viewValue}}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-group">
+                  <mat-form-field appearance="fill">
+                    <mat-label>Timing2</mat-label>
+                    <mat-select>
+                      <mat-option *ngFor="let timing of timings" [value]="timing.value">
+                        {{timing.viewValue}}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-group">
+                  <mat-form-field appearance="fill">
+                    <mat-label>Timing3</mat-label>
+                    <mat-select>
+                      <mat-option *ngFor="let timing of timings" [value]="timing.value">
+                        {{timing.viewValue}}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="col">
+                <div class="form-group">
+                  
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-group">
+                 
+                </div>
+              </div>
+            </div>
+            <button
+              class="btn btn-primary"
+              type="submit"
+              [disabled]="!addForm.valid"
+            >
+              Add Prescription
+            </button>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

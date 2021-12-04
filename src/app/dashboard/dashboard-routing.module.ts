@@ -8,6 +8,8 @@ import { ViewProfileComponent } from '../profile/view-profile/view-profile.compo
 import { DashboardComponent } from './dashboard.component';
 import { ViewAppointmentsComponent } from '../patient-dashboard/view-appointments/view-appointments.component';
 import { ScheduleAppointmentComponent } from '../patient-dashboard/schedule-appointment/schedule-appointment.component';
+import { AddPrescriptionComponent } from '../doctor-dashboard/add-prescription/add-prescription.component';
+import { ViewNotificationsComponent } from './notifications/view-notifications.component';
 
 const routes: Routes = [
   {
@@ -25,8 +27,10 @@ const routes: Routes = [
       { path: 'patients', component: ViewPatientsComponent },
       { path: 'addpatient', component: AddPatientComponent },
       { path: 'appointments', component: ViewAppointmentsComponent },
+      { path: 'prescription', component: AddPrescriptionComponent },
       { path: 'scheduleAppointment', component: ScheduleAppointmentComponent },
       { path: 'viewprofile', component: ViewProfileComponent },
+      {path:'notifications',component:ViewNotificationsComponent},
       { path: '', component: ViewProfileComponent },
       { path: '**', redirectTo: '/404' },
     ],

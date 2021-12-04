@@ -24,10 +24,22 @@
         <div class="sidebar-brand-text">{{ user?.email }}</div>
       </div>
       </a>
-      <div class="sidebar-brand-text d-flex justify-content-center align-items-center">
-        <mat-icon matBadge="10" matBadgeOverlap=false matBadgeColor="warn"  matBadgeSize="small">
+      <a>
+      <div  style="cursor: pointer" class="sidebar-brand-text d-flex justify-content-center align-items-center">
+        <mat-icon matBadge="3"  [routerLink]="['/dashboard/notifications']" matBadgeOverlap=false matBadgeColor="warn"  matBadgeSize="small">
           notifications</mat-icon>
       </div>
+    </a>
+     <!-- <a
+        id="logo"
+        class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0"
+        [routerLink]="['/dashboard']"
+      >
+        <div class="sidebar-brand-icon rotate-n-15">
+          <div class="sidebar-brand-text mx-0"><span>E-Hospital Management</span></div>
+        </div>
+      </a>-->
+
       <hr class="nav-hr" />
       <ul class="nav navbar-nav text-light" id="accordionSidebar">
         <li class="nav-item" *ngFor="let item of paths">

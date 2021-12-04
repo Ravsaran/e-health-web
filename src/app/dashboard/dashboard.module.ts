@@ -17,6 +17,8 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core';
 import { BrowserModule } from '@angular/platform-browser'
 import { ViewAppointmentsComponent } from '../patient-dashboard/view-appointments/view-appointments.component';
+import { AddPrescriptionComponent } from '../doctor-dashboard/add-prescription/add-prescription.component';
+import { ViewNotificationsComponent } from './notifications/view-notifications.component';
 @NgModule({
   declarations: [
     ViewDoctorsComponent,
@@ -26,7 +28,9 @@ import { ViewAppointmentsComponent } from '../patient-dashboard/view-appointment
     ViewProfileComponent,
     DashboardComponent,
     ScheduleAppointmentComponent,
-    ViewAppointmentsComponent
+    ViewAppointmentsComponent,
+    AddPrescriptionComponent,
+    ViewNotificationsComponent
 
   ],
   imports: [
