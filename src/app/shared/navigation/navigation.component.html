@@ -9,7 +9,8 @@
         [routerLink]="['/dashboard']"
       >
         <div class="sidebar-brand-icon rotate-n-15">
-          <div class="sidebar-brand-text mx-0"><span>E-Hospital Management</span></div>
+          <div class="sidebar-brand-text mx-0 font-weight-bold"><span>E-Hospital Management</span></div>
+         
         </div>
       </a>
       <hr class="nav-hr" />
@@ -20,35 +21,25 @@
       >
       <div> 
       <div class="sidebar-brand-icon rotate-n-15"></div>
-      <div class="sidebar-brand-text justify-content-center mx-4">Welcome</div>
-        <div class="sidebar-brand-text">{{ user?.email }}</div>
+      <div class="sidebar-brand-text justify-content-center mx-4 font-weight-bold">Welcome</div>
+        <div class="sidebar-brand-text font-weight-bold">{{ user?.email }}</div>
       </div>
       </a>
       <a>
       <div  style="cursor: pointer" class="sidebar-brand-text d-flex justify-content-center align-items-center">
-        <mat-icon matBadge="3"  [routerLink]="['/dashboard/notifications']" matBadgeOverlap=false matBadgeColor="warn"  matBadgeSize="small">
+        <mat-icon matBadge="3"   [ngStyle]="{'color':'white'}" [routerLink]="['/dashboard/notifications']" matBadgeOverlap=false matBadgeColor="warn"  matBadgeSize="small">
           notifications</mat-icon>
       </div>
     </a>
-     <!-- <a
-        id="logo"
-        class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0"
-        [routerLink]="['/dashboard']"
-      >
-        <div class="sidebar-brand-icon rotate-n-15">
-          <div class="sidebar-brand-text mx-0"><span>E-Hospital Management</span></div>
-        </div>
-      </a>-->
-
       <hr class="nav-hr" />
       <ul class="nav navbar-nav text-light" id="accordionSidebar">
         <li class="nav-item" *ngFor="let item of paths">
-          <a class="nav-link" [routerLink]="[item.route]">
+          <a class="nav-link font-weight-bold" [routerLink]="[item.route]">
             <i [class]="item.class"></i><span> {{ item.label }} </span>
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" (click)="signOut()" style="cursor: pointer">
+          <a class="nav-link font-weight-bold" (click)="signOut()" style="cursor: pointer">
             <i class="fas fa-sign-out-alt"> </i><span>Sign Out</span>
           </a>
         </li>

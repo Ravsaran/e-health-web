@@ -19,6 +19,8 @@ import { BrowserModule } from '@angular/platform-browser'
 import { ViewAppointmentsComponent } from '../patient-dashboard/view-appointments/view-appointments.component';
 import { AddPrescriptionComponent } from '../doctor-dashboard/add-prescription/add-prescription.component';
 import { ViewNotificationsComponent } from './notifications/view-notifications.component';
+import { ViewDiagnosticsComponent } from '../patient-dashboard/view-diagnostics/view-diagnostics.component';
+import { AddDiagnosticComponent } from '../doctor-dashboard/add-diagnostics/add-diagnostics.component';
 @NgModule({
   declarations: [
     ViewDoctorsComponent,
@@ -30,7 +32,9 @@ import { ViewNotificationsComponent } from './notifications/view-notifications.c
     ScheduleAppointmentComponent,
     ViewAppointmentsComponent,
     AddPrescriptionComponent,
-    ViewNotificationsComponent
+    ViewNotificationsComponent,
+    ViewDiagnosticsComponent,
+    AddDiagnosticComponent
 
   ],
   imports: [

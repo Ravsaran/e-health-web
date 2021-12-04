@@ -1,12 +1,11 @@
+import { unescapeIdentifier } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Patient } from 'src/app/models/patient.model';
 import { Prescription } from 'src/app/models/prescription.model';
 import { PrescriptionDetails } from 'src/app/models/prescriptionDetails.model';
-import { UserResponse } from 'src/app/models/user-response.model';
-import { User } from 'src/app/models/user.model';
-import { Warehouse } from 'src/app/models/warehouse.model';
+import { UserDetails } from 'src/app/models/user-details.model';
 import { PrescriptionService } from 'src/app/services/prescription.service';
+import { PrescriptionDetailsService } from 'src/app/services/prescriptionDetails.service';
 
 @Component({
   selector: 'app-add-prescription',
@@ -15,9 +14,25 @@ import { PrescriptionService } from 'src/app/services/prescription.service';
 })
 export class AddPrescriptionComponent implements OnInit {
   prescription: Prescription;
-  patientId:String;
-  doctorId:String;
-  medicalCondition:String;
+  patientId:string;
+  patientName:string;
+  doctorId:string;
+  medicalCondition:string;
+  doctorName:string;
+  prescriptionDetails:PrescriptionDetails[] =[];
+  medicineName:string;
+  medicineTiming1:string;
+  medicineTiming2:string;
+  medicineTiming3:string;
+  foodItem:string;
+  foodItemTiming1:string;
+  foodItemTiming2:string;
+  foodItemTiming3:string;
+  exercise:string;
+  exerciseTiming1:string;
+  exerciseTiming2:string;
+  exerciseTiming3:string;
+
 
   foods: any[] = [
     {value: 'Fruits', viewValue: 'Fruits', 
@@ -56,31 +71,65 @@ export class AddPrescriptionComponent implements OnInit {
 
   constructor(
     private prescriptionService: PrescriptionService,
+    private prescriptionDetailsService :PrescriptionDetailsService, 
     private router: Router
   ) {
     this.prescription = new Prescription();
   }
 
   ngOnInit(): void {
+    let userDetails:UserDetails = JSON.parse(sessionStorage.getItem('loggeduser'));
+    this.doctorId = userDetails.professionId;
+    this.doctorName = userDetails.name;
   }
 
   savePrescription() {
-   // this.prescription.patientId = this.doctor_name;
-    //this.prescription.doctorId= this.specialization;
-    //this.prescription.medicalCondition= this.gender;
+   this.prescription.patientId = this.patientId;
+    this.prescription.doctorId= this.doctorId;
+    this.prescription.medicalCondition= this.medicalCondition;
     //this.prescription.email_id = this.email_id;
   
     
    
 
-   /* this.doctorService.createUser(userdata)
-      .subscribe((x: any) => {
-        this.doctor.user = x;
+    this.prescriptionService.createPrescription(this.prescription)
+      .subscribe((x: Prescription) => {
+
+        let pres = new PrescriptionDetails();
+        pres.prescriptionId= x.id;
+        pres.actionItem= this.medicineName == undefined ? "":this.medicineName;
+        pres.timing1= this.medicineTiming1 == undefined ? "":this.medicineTiming1;
+        pres.timing2= this.medicineTiming2 == undefined ? "":this.medicineTiming2;
+        pres.timing3= this.medicineTiming3 == undefined ? "":this.medicineTiming3;
+
+        let pres1 = new PrescriptionDetails();
+        pres1.prescriptionId= x.id;
+        pres1.actionItem= this.foodItem == undefined ? "":this.foodItem;
+        pres1.timing1= this.foodItemTiming1 == undefined ? "":this.foodItemTiming1;
+        pres1.timing2= this.foodItemTiming2 == undefined ? "":this.foodItemTiming2;
+        pres1.timing3= this.foodItemTiming3 == undefined ? "":this.foodItemTiming3;
+
+        let pres2 = new PrescriptionDetails();
+        pres2.prescriptionId= x.id;
+        pres2.actionItem= this.exercise == undefined ? "":this.exercise;
+        pres2.timing1= this.exerciseTiming1 == undefined ? "":this.exerciseTiming1;
+        pres2.timing2= this.exerciseTiming2 == undefined ? "":this.exerciseTiming2;
+        pres2.timing3= this.exerciseTiming3 == undefined ? "":this.exerciseTiming3;
+
+        this.prescriptionDetails.push(pres);
+        this.prescriptionDetails.push(pres1);
+        this.prescriptionDetails.push(pres2);
+
+        this.prescriptionDetailsService.createPrescriptionDetails(this.prescriptionDetails)
+        .subscribe(x =>{
+          console.log("succesfully created the prescription");
+        });
+        /*this.doctor.user = x;
         this.doctorService.addDoctor(this.doctor).subscribe((x) => {
-        this.router.navigate(['/dashboard/doctors']);
+       // this.router.navigate(['/dashboard/doctors']);*/
       });
-      });
-    */
+      //});
+    //*/
   }
   }
 

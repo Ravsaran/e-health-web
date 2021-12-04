@@ -10,6 +10,8 @@ import { ViewAppointmentsComponent } from '../patient-dashboard/view-appointment
 import { ScheduleAppointmentComponent } from '../patient-dashboard/schedule-appointment/schedule-appointment.component';
 import { AddPrescriptionComponent } from '../doctor-dashboard/add-prescription/add-prescription.component';
 import { ViewNotificationsComponent } from './notifications/view-notifications.component';
+import { ViewDiagnosticsComponent } from '../patient-dashboard/view-diagnostics/view-diagnostics.component';
+import { AddDiagnosticComponent } from '../doctor-dashboard/add-diagnostics/add-diagnostics.component';
 
 const routes: Routes = [
   {
@@ -31,6 +33,8 @@ const routes: Routes = [
       { path: 'scheduleAppointment', component: ScheduleAppointmentComponent },
       { path: 'viewprofile', component: ViewProfileComponent },
       {path:'notifications',component:ViewNotificationsComponent},
+      {path:'diagnostics',component:ViewDiagnosticsComponent},
+      {path:'addDiagnosticReport',component:AddDiagnosticComponent},
       { path: '', component: ViewProfileComponent },
       { path: '**', redirectTo: '/404' },
     ],

@@ -2,7 +2,7 @@ import { UserResponse } from "./user-response.model";
 import { User } from "./user.model";
 
 export class PatientDetail {
-    patientId: string;
+    id: string;
     firstName: string;
     lastName: string;
     gender: string;

@@ -12,12 +12,6 @@ import { AuthService } from 'src/app/services/auth.service';
 export class NavigationComponent implements OnInit {
   public user: User = null;
   paths = [
-    /*{
-      route: '/dashboard/viewprofile',
-      class: 'fas fa-user',
-      label: 'Profile', 
-      role: 'User',
-    },*/
     {
       route: '/dashboard/patients',
       class: 'fas fa-user',
@@ -26,40 +20,46 @@ export class NavigationComponent implements OnInit {
     },
     {
       route: '/dashboard/doctors',
-      class: 'fas fa-boxes',
+      class: 'fas fa-user-md',
       label: 'Doctors',
       role: 'admin',
     },
     {
       route: '/dashboard/appointments',
-      class: 'fas fa-truck-moving',
+      class: 'fas fa-stethoscope',
       label: 'Appointments',
       role: 'patient',
     },
     {
-      route: '/dashboard/appointments',
-      class: 'fas fa-boxes',
+      route: '/dashboard/diagnostics',
+      class: 'fas fa-medkit',
       label: 'Diagnostic Reports',
       role: 'patient',
     },
     {
       route: '/dashboard/appointments',
-      class: 'fas fa-people-carry',
+      class: 'fas fa-stethoscope',
       label: 'Prescription',
       role: 'patient',
     }
     ,
     {
       route: '/dashboard/prescription',
-      class: 'fas fa-people-carry',
+      class: 'fas fa-file-image-o',
       label: 'Prescription',
       role: 'doctor',
     },
     {
       route: '/dashboard/notifications',
-      class: 'fas fa-people-carry',
+      class: 'fas fa-bell',
       label: 'Notification',
       role: 'patient',
+    },
+    {
+      route: '/dashboard/addDiagnosticReport',
+      class: 'fas fa-medkit',
+      label: 'Add Diagnostic Report',
+      role: 'doctor',
     }
   ];
 

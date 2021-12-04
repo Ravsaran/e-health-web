@@ -1,0 +1,87 @@
+<div class="d-flex flex-column" id="content-wrapper">
+  <div id="content">
+    <div class="container-fluid">
+      <h3  class="text-dark font-weight-bold">Add Diagnostic Report</h3>
+      <div class="card shadow">
+        <div class="card-header py-3">
+          <p  class="text-dark font-weight-bold">Diagnostic test form</p>
+        </div>
+        <div class="card-body">
+          <form
+            (ngSubmit)="saveDiagnosticReport()"
+            #addForm="ngForm"
+            class="needs-validation">
+            <div class="form-row">
+              <div class="col">
+                <div class="form-group">
+                  <label for="patientId"><strong>Patient Id</strong><br /></label>
+                  <input
+                  [(ngModel)]="patientId"
+                    name="patientId1"
+                    placeholder="Enter the patient id" 
+                    class="form-control"
+                    ngModel
+                    required
+                  />
+                </div>
+              </div>
+              </div> 
+
+ <div class="form-row">
+                <div class="col">
+                  <div class="form-group">
+                    <label for="doctorId"><strong>Doctor Id</strong><br /></label>
+                    <input
+                    [(ngModel)]="doctorId"
+                      name="doctorId"
+                      placeholder="Enter the doctor id" 
+                      class="form-control"
+                      ngModel
+                      required
+                    />
+                  </div>
+                </div>
+                </div>
+                <div class="form-row">
+                  <div class="col">
+                    <div class="form-group">
+                      <label for="doctorName"><strong>Doctor Name</strong><br /></label>
+                      <input
+                      [(ngModel)]="doctorName"
+                        name="doctorName"
+                        class="form-control"
+                        ngModel
+                        required
+                      />
+                    </div>
+                  </div>
+                  </div>
+                <div class="form-row">
+                  <div class="col">
+                    <div class="form-group">
+                      <label for="testName"><strong>Test name</strong><br /></label>
+                      <input
+                      [(ngModel)]="testName"
+                        name="medicalCondition"
+                        placeholder="Enter the test name" 
+                        class="form-control"
+                        ngModel
+                        required
+                      />
+                    </div>
+                  </div>
+                  </div>
+				  
+				   <button
+            class="btn btn-primary"
+            type="submit"
+            [disabled]="!addForm.valid"
+          >
+            Add Diagnostic test
+          </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

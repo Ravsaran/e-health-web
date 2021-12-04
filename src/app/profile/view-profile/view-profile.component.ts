@@ -35,7 +35,7 @@ export class ViewProfileComponent implements OnInit {
     this.userResponse = this.authService.fetchFromSessionStorage();
     if(this.userResponse?.role.toLowerCase().includes('patient')){
       this.patientService.fetchPatient(this.userResponse.id).subscribe((response: PatientDetail) => {
-        this.createUser(response.user?.id,
+        this.createUser(response.id,
           response.firstName +" " + response.lastName,
           'Patient',
           'Patient',
@@ -43,13 +43,15 @@ export class ViewProfileComponent implements OnInit {
           response.email,
           response.mobileNumber,
           response.address,
-          response.user)
+          this.userResponse);
+          //this.saveUserDetailsSessionStorage(response);
+          this.saveUserDetailsSessionStorage(this.user);
       });
       
     }
     if(this.userResponse?.role.toLowerCase().includes('doctor')){
       this.doctorService.fetchDoctor(this.userResponse.id).subscribe((response: DoctorDetails) => {
-        this.createUser(response.user?.id,
+        this.createUser(response.id,
           response.doctor_name,
           'Doctor',
           response.specialization,
@@ -57,12 +59,13 @@ export class ViewProfileComponent implements OnInit {
           response.email_id,
           response.mobile_number,
           response.address,
-          response.user)
+          this.userResponse);
+         this.saveUserDetailsSessionStorage(this.user);
       });
     }
     if(this.userResponse?.role.toLowerCase().includes('admin')){
       this.adminService.fetchAdmin(this.userResponse.id).subscribe((response: AdminDetails) => {
-        this.createUser(response.user?.id,
+        this.createUser(response.id,
           response.admin_name,
           'Admin',
           'Admin',
@@ -70,12 +73,22 @@ export class ViewProfileComponent implements OnInit {
           response.email_id,
           response.mobile_number,
           response.address,
-          response.user)
-      });
-    }
+          this.userResponse);
+          this.saveUserDetailsSessionStorage(this.user);
+     });
+  }
+  
+  }
+  saveUserDetailsSessionStorage(user: UserDetails) {
+    sessionStorage.setItem('loggeduser', JSON.stringify(user));
   }
 
-  createUser(userId: number,
+  fetchFromSessionStorage(): UserDetails {
+    return JSON.parse(sessionStorage.getItem('loggeduser'));
+  }
+
+
+  createUser(id: string,
     name: string,
     role: string,
     specialization: string,
@@ -91,7 +104,9 @@ export class ViewProfileComponent implements OnInit {
     this.user.emailId = emailId;
     this.user.phoneNo = phoneNo;
     this.user.address = address;
-    this.user.user = user;
+    this.user.professionId=id;
+   // this.user.userId= user.id.toString();
+    //this.user.user = user;
   }
 
   ngOnInit(): void {}
