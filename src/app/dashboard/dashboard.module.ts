@@ -20,6 +20,7 @@ import { AddPrescriptionComponent } from '../doctor-dashboard/add-prescription/a
 import { ViewNotificationsComponent } from './notifications/view-notifications.component';
 import { ViewDiagnosticsComponent } from '../patient-dashboard/view-diagnostics/view-diagnostics.component';
 import { AddDiagnosticComponent } from '../doctor-dashboard/add-diagnostics/add-diagnostics.component';
+import { ViewPrescriptionComponent } from '../patient-dashboard/view-prescription/view-prescription.component';
 @NgModule({
   declarations: [
     ViewDoctorsComponent,
@@ -33,7 +34,8 @@ import { AddDiagnosticComponent } from '../doctor-dashboard/add-diagnostics/add-
     AddPrescriptionComponent,
     ViewNotificationsComponent,
     ViewDiagnosticsComponent,
-    AddDiagnosticComponent
+    AddDiagnosticComponent,
+    ViewPrescriptionComponent
 
   ],
   imports: [

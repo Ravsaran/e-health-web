@@ -36,7 +36,7 @@ export class NavigationComponent implements OnInit {
       role: 'patient',
     },
     {
-      route: '/dashboard/appointments',
+      route: '/dashboard/viewprescription',
       class: 'fas fa-stethoscope',
       label: 'Prescription',
       role: 'patient',

@@ -12,6 +12,7 @@ import { AddPrescriptionComponent } from '../doctor-dashboard/add-prescription/a
 import { ViewNotificationsComponent } from './notifications/view-notifications.component';
 import { ViewDiagnosticsComponent } from '../patient-dashboard/view-diagnostics/view-diagnostics.component';
 import { AddDiagnosticComponent } from '../doctor-dashboard/add-diagnostics/add-diagnostics.component';
+import { ViewPrescriptionComponent } from '../patient-dashboard/view-prescription/view-prescription.component';
 
 const routes: Routes = [
   {
@@ -30,6 +31,8 @@ const routes: Routes = [
       { path: 'addpatient', component: AddPatientComponent },
       { path: 'appointments', component: ViewAppointmentsComponent },
       { path: 'prescription', component: AddPrescriptionComponent },
+      
+      { path: 'viewprescription', component: ViewPrescriptionComponent },
       { path: 'scheduleAppointment', component: ScheduleAppointmentComponent },
       { path: 'viewprofile', component: ViewProfileComponent },
       {path:'notifications',component:ViewNotificationsComponent},
